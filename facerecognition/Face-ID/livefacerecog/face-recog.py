@@ -2,7 +2,7 @@ import cv2
 import os
 
 # for face detection
-face_cascade = cv2.CascadeClassifier('/Users/paarth/Desktop/projekts/facerecognition/Face-ID/livefacerecog/haarcascade_frontalface_alt2.xml')
+face_cascade = cv2.CascadeClassifier('*insert your own path here*/facerecognition/Face-ID/livefacerecog/haarcascade_frontalface_alt2.xml')
 
 # resolution of the webcam
 screen_width = 1280       # try 640 if code fails
@@ -23,7 +23,7 @@ while True:
     for (x, y, w, h) in faces:
         #save face
         if count < 50:
-            cv2.imwrite(os.path.join("/Users/paarth/Desktop/projekts/facerecognition/Face-ID/oneshotfacerecog/unknown", f'{count}.jpg'), frame)
+            cv2.imwrite(os.path.join("*insert your own path here*/facerecognition/Face-ID/oneshotfacerecog/unknown", f'{count}.jpg'), frame)
             count += 1
         # Draw a rectangle around the face
         color = (255, 0, 0) # in BGR
