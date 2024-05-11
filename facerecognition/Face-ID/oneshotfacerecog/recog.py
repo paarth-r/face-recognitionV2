@@ -18,10 +18,10 @@ def listdir_nohidden(path):
 def recognise(url3, savename):
   foundfaces = []
   known_face_encodings = [
-      face_recognition.face_encodings(face_recognition.load_image_file(f"/Users/paarth/Desktop/projekts/facerecognition/Face-ID/oneshotfacerecog/known/{n}"))[0] for n in listdir_nohidden("/Users/paarth/Desktop/projekts/facerecognition/Face-ID/oneshotfacerecog/known")
+      face_recognition.face_encodings(face_recognition.load_image_file(f"*insert your own path here*/facerecognition/Face-ID/oneshotfacerecog/known/{n}"))[0] for n in listdir_nohidden("*insert your own path here*/facerecognition/Face-ID/oneshotfacerecog/known")
   ]
   known_face_names = [
-      n for n in listdir_nohidden("/Users/paarth/Desktop/projekts/facerecognition/Face-ID/oneshotfacerecog/known")
+      n for n in listdir_nohidden("*insert your own path here*/facerecognition/Face-ID/oneshotfacerecog/known")
   ]
 
   # Load an image with an unknown face
@@ -73,13 +73,13 @@ def recognise(url3, savename):
 
   # Save the resulting image
   found = '_'.join(foundfaces)
-  pil_image.save(f"/Users/paarth/Desktop/projekts/facerecognition/Face-ID/oneshotfacerecog/recognised/{found+savename}.jpg")
+  pil_image.save(f"*insert your own path here*/facerecognition/Face-ID/oneshotfacerecog/recognised/{found+savename}.jpg")
 
-images = [img for img in os.listdir("/Users/paarth/Desktop/projekts/facerecognition/Face-ID/oneshotfacerecog/unknown") if img.endswith(".jpg")]
+images = [img for img in os.listdir("*insert your own path here*/facerecognition/Face-ID/oneshotfacerecog/unknown") if img.endswith(".jpg")]
 print(images)
 for n, imagename in enumerate(images):
     print("recognising")
-    recognise(f"/Users/paarth/Desktop/projekts/facerecognition/Face-ID/oneshotfacerecog/unknown/{imagename}", f"frame_{n}")
+    recognise(f"*insert your own path here*/facerecognition/Face-ID/oneshotfacerecog/unknown/{imagename}", f"frame_{n}")
 
 
 
